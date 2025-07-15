@@ -4,7 +4,8 @@
 #include <utility>
 #include <functional>
 #include <stack>
-#include "cassert"
+#include <cassert>
+#include <cstdint>
 
 enum Direction
 {

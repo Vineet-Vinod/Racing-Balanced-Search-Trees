@@ -49,7 +49,6 @@ private:
     std::string tree_name;
 
     // SFINAE trait to detect if a `clear()` method exists.
-    // AI Generated - idk what's happening
     template <typename T, typename = void>
     struct has_clear_method : std::false_type
     {

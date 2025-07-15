@@ -4,7 +4,8 @@
 #include <utility>
 #include <functional>
 #include <stack>
-#include "cassert"
+#include <cassert>
+#include <cstdint>
 
 template <typename T, typename Compare = std::less<T>>
 class AVLTree
@@ -269,7 +270,7 @@ private: // Members
     {
         T val;
         TreeNode *left, *right;
-        u_int32_t height;
+        uint32_t height;
 
         TreeNode() : val(), height(1)
         {
@@ -347,12 +348,12 @@ private: // Functions
 
     TreeNode *balance(TreeNode *root)
     {
-        u_int32_t lh = root->left ? root->left->height : 0, rh = root->right ? root->right->height : 0;
+        uint32_t lh = root->left ? root->left->height : 0, rh = root->right ? root->right->height : 0;
 
         if (lh > 1 + rh)
         {
             TreeNode *left = root->left;
-            u_int32_t llh = left->left ? left->left->height : 0, lrh = left->right ? left->right->height : 0;
+            uint32_t llh = left->left ? left->left->height : 0, lrh = left->right ? left->right->height : 0;
 
             // Double rotate
             if (lrh > llh)
@@ -366,7 +367,7 @@ private: // Functions
         else if (rh > 1 + lh)
         {
             TreeNode *right = root->right;
-            u_int32_t rlh = right->left ? right->left->height : 0, rrh = right->right ? right->right->height : 0;
+            uint32_t rlh = right->left ? right->left->height : 0, rrh = right->right ? right->right->height : 0;
 
             // Double rotate
             if (rlh > rrh)

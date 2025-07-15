@@ -4,6 +4,7 @@
 #include <utility>
 #include <functional>
 #include <stack>
+#include <cstdint>
 
 template <typename T, std::size_t N, typename Compare = std::less<T>>
 requires (N > 1)

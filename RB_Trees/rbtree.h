@@ -4,6 +4,7 @@
 #include <utility>
 #include <functional>
 #include <stack>
+#include <cstdint>
 
 enum color_t
 {
